@@ -172,13 +172,10 @@ class Student extends Lambdasian {
   }
   listSubjects() {
     let subStr = '';
-    for (let i = 0; i < this.favSubjects.length; i++) {
-      subStr += this.favSubjects[i];
-      if (i < this.favSubjects.length - 1) {
-        subStr += ',';
-      }
+    for (let sub of this.favSubjects) {
+      subStr += `${sub}, `;
     }
-    return `Loving ${subStr}!`;
+    return `Loving ${subStr.substring(0, subStr.length - 2)}!`;
   }
   PRAssignment(subject) {
     return `${this.name} has submitted a PR for ${subject}`;
